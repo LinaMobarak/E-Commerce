@@ -19,12 +19,18 @@
     padding: 10px;
     border-radius: 30px;
     direction: rtl;
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 0%;
+    opacity: 0;
+  
 }
 
 .main-menu li {
     margin: 0 10px;
     padding: 5px 15px;
     cursor: pointer;
+    transition: 1s;
+    
 }
 
 .main-menu li.active {
@@ -42,7 +48,31 @@
 }
 
 .user-actions > div {
-    /* margin: 0 5px; */
     cursor: pointer;
-   
+
+}
+
+@keyframes fade-in
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+@keyframes left-in
+{
+    from
+    {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    to
+    {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }

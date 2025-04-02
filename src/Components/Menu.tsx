@@ -3,8 +3,10 @@ import '../Styles/MenuStyle.css'
 import { RiShoppingBag4Line } from "react-icons/ri";
 import { FaRegHeart } from 'react-icons/fa';
 import { IoSearch } from 'react-icons/io5';
+import NavBar from './NavBar';
 
 const Menu = () => {
+
   return (
     <div className="logo-menu">
             <div className="user-actions">
@@ -12,17 +14,10 @@ const Menu = () => {
                 <RiShoppingBag4Line />
                 <CgProfile />
                 <FaRegHeart />
-                
                 <IoSearch />
             </div>
             
-            <ul className="main-menu">
-                <li className="active">الرئيسية</li>
-                <li>العناية</li>
-                <li>الأطفال</li>
-                <li>العطور</li>
-                <li>المكياج</li>
-            </ul>
+            <NavBar />
             
             <div className="logo">
                 LS
