@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وفاي - متجر إلكتروني</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #e0f7f5;
+            direction: rtl;
+        }
+        
+        .website-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .top-bar {
+            background-color: #acd4df;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #333;
+            font-size: 12px;
+        }
+        
+        .logo-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo svg {
+            margin-left: 5px;
+        }
+        
+        .main-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .main-menu li {
+            margin: 0 10px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        
+        .main-menu li.active {
+            background-color: #ffde5a;
+            border-radius: 20px;
+            color: #000;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-actions > div {
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        
+        .hero-banner {
+            background-color: #68b2c1;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .hero-content {
+            width: 50%;
+            z-index: 2;
+        }
+        
+        .hero-content h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .hero-content p {
+            font-size: 18px;
+        }
+        
+        .hero-image {
+            width: 50%;
+            text-align: left;
+            z-index: 2;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .hero-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .category-boxes {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        
+        .category-box {
+            width: 32%;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 100px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-box:nth-child(1) {
+            background-color: #f7d359;
+        }
+        
+        .category-box:nth-child(2) {
+            background-color: #f5a2a2;
+        }
+        
+        .category-box:nth-child(3) {
+            background-color: #f5e259;
+        }
+        
+        .featured-products {
+            padding: 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        
+        .product-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .product-card {
+            width: 19%;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 10px;
+            position: relative;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #f5d76e;
+            padding: 2px 8px;
+            border-radius: 15px;
+            font-size: 10px;
+        }
+        
+        .product-image {
+            background-color: white;
+            padding: 10px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .product-info {
+            margin-top: 10px;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        .circle-decoration {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+        
+        .dots-decoration {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: radial-gradient(#f5e259 2px, transparent 2px);
+            background-size: 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="website-container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <span>خصومات خاصة فقط على موقعنا الإلكتروني</span>
+            </div>
+            <div class="top-bar-right">
+                <span>🕒 +972344567890</span>
+                <span>📧 info@example.com</span>
+            </div>
+        </div>
+        
+        <!-- Logo and Menu -->
+        <div class="logo-menu">
+            <div class="user-actions">
+                <div class="cart">🛒</div>
+                <div class="favorites">❤️</div>
+                <div class="search">🔍</div>
+                <div class="user">👤</div>
+                <div class="menu">سلة التسوق</div>
+            </div>
+            
+            <ul class="main-menu">
+                <li class="active">الرئيسية</li>
+                <li>العناية</li>
+                <li>الأطفال</li>
+                <li>العطور</li>
+                <li>المكياج</li>
+            </ul>
+            
+            <div class="logo">
+                فاي
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z" fill="#000"></path>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <div class="hero-image">
+                <img src="/api/placeholder/400/200" alt="Delivery van">
+            </div>
+            <div class="hero-content">
+                <h2>طلباتكم داخل مدينة الرياض</h2>
+                <p>توصل خلال 24 ساعة</p>
+            </div>
+            <!-- Decorative elements -->
+            <div class="circle-decoration" style="width: 80px; height: 80px; top: 20px; right: 20px; border-color: #f5e259;"></div>
+            <div class="circle-decoration" style="width: 120px; height: 120px; bottom: -60px; left: 20px; border-color: #aad4e2;"></div>
+            <div class="dots-decoration" style="bottom: 20px; right: 100px;"></div>
+        </div>
+        
+        <!-- Category Boxes -->
+        <div class="category-boxes">
+            <div class="category-box">المكياج</div>
+            <div class="category-box">العناية</div>
+            <div class="category-box">الأطفال</div>
+        </div>
+        
+        <!-- Featured Products -->
+        <div class="featured-products">
+            <h3 class="section-title">منتجاتنا المميزة</h3>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-badge">أصلي 100%</div>
+                    <div class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <div>مجموعة تيررا للعناية بالجلد حجم عائلي نسخة خاصة</div>
+                        <div class="product-price">189 ر.س</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">أكثر مبيعاً</div>
+                    <div class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <div>مجموعة كريم الترطيب حجم كبير نسخة خاصة</div>
+                        <div class="product-price">189 ر.س</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">أشكال متعددة</div>
+                    <div class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <div>باليت ظلال عيون 16 لون أدوات تجميل</div>
+                        <div class="product-price">189 ر.س</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">آخر قطعة</div>
+                    <div class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <div>مجموعة كريم الترطيب حجم كبير نسخة خاصة</div>
+                        <div class="product-price">189 ر.س</div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">أصلي 100%</div>
+                    <div class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Product">
+                    </div>
+                    <div class="product-info">
+                        <div>مجموعة كريم الترطيب حجم كبير نسخة خاصة</div>
+                        <div class="product-price">189 ر.س</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
