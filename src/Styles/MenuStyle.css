@@ -1,0 +1,48 @@
+.logo-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    background-color: #eeeeee;
+    padding: 10px;
+    border-radius: 30px;
+    direction: rtl;
+}
+
+.main-menu li {
+    margin: 0 10px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.main-menu li.active {
+    background-color: #ffde5a;
+    border-radius: 20px;
+    color: #000;
+}
+
+.user-actions {
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    grid-gap: 5px;
+    align-items: center;
+    
+}
+
+.user-actions > div {
+    /* margin: 0 5px; */
+    cursor: pointer;
+   
+}

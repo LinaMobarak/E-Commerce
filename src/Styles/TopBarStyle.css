@@ -1,0 +1,16 @@
+.top-bar {
+    background-color: #acd4df;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    font-size: 12px;
+    border-radius: 30px;
+}
+.top-bar-right {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 5px;
+    cursor: pointer;
+}
