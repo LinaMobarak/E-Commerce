@@ -1,6 +1,7 @@
-import { IoIosPhonePortrait } from 'react-icons/io'
+import { IoIosMail, IoIosPhonePortrait } from 'react-icons/io'
 import '../Styles/TopBarStyle.css'
 import { IoMailUnreadOutline } from 'react-icons/io5'
+import { FaPhone } from 'react-icons/fa'
 
 const TopBar = () => {
   return (
@@ -9,10 +10,14 @@ const TopBar = () => {
                 <span>خصومات خاصة فقط على موقعنا الإلكتروني</span>
             </div>
             <div className="top-bar-right">
-                <IoIosPhonePortrait />
                 <span className="span">+972344567890</span>
-                <IoMailUnreadOutline />
+                <span className="icons">
+                  <FaPhone />
+                </span>
                 <span className="span">info@example.com</span>
+                <span className="icons">
+                  <IoIosMail />
+                </span>
             </div>
         </div>
   )
