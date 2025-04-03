@@ -10,6 +10,7 @@ import Products from '../components/Products'
 
 const Category = () => {
   const products = useProductStore((state) => state.productsArray);
+  const add = useProductStore((state) => state.addToCart);
   const id = useParams().id;
   const categoryId = Number(id);
 
@@ -23,12 +24,9 @@ const Category = () => {
           {categories[categoryId - 1].name}
         </h1>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }} className="product-grid">
-        {products.filter((product) => product.category === categoryId).map((p => <div onClick={() => {
-                    const currentCart = useProductStore.getState().cart
-                    useProductStore.setState({ cart: [...currentCart, p] })
-                    }} ><Products {...p}/></div>
+        {products.filter((product) => product.category === categoryId).map((p => <div onClick={() => add(p)}><Products {...p}/></div>
 
-                  ))}
+                  ))}  
       
         </div>
         
