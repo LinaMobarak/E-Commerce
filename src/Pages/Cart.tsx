@@ -1,13 +1,14 @@
 import React from 'react'
 import useProductStore from '../Store/ProductStore';
-
-import Products from '../components/Products';
+import Products from '../Components/Products';
+import Menu from '../Components/Menu';
 
 const Cart = () => {
     const cartyy = useProductStore((state) => state.cart);
     console.log(cartyy)
   return (
     <>
+    <Menu />
         <div className="cart">
             <h1 style={{ margin: '30px' }} className="category-title">
             سلة التسوق
