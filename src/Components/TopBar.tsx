@@ -1,6 +1,6 @@
-import { IoIosMail, IoIosPhonePortrait } from 'react-icons/io'
-import '../Styles/TopBarStyle.css'
-import { IoMailUnreadOutline } from 'react-icons/io5'
+import { IoIosMail} from 'react-icons/io'
+import '../style/TopBarStyle.css'
+
 import { FaPhone } from 'react-icons/fa'
 
 const TopBar = () => {

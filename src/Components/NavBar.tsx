@@ -1,17 +1,26 @@
 import React from 'react'
-import '../Styles/MenuStyle.css'
+import '../style/MenuStyle.css'
 import { useNavigate } from 'react-router-dom'
-
+export const categories = [
+    { id: 1, name: 'العناية' },
+    { id: 2, name: 'الأطفال' },
+    { id: 3, name: 'العطور' },
+    { id: 4, name: 'المكياج' },
+]
 const NavBar = () => {
     const navigate = useNavigate()
   return (
-    <ul className="main-menu" style={{width: 'fit-content' , margin: '0 auto'}}>
-            <li className="active" onClick={()=>{navigate('/home')}}>الرئيسية</li>
-            <li onClick={()=>{navigate('/care')}}>العناية</li>
-            <li onClick={()=>{navigate('/children')}}>الأطفال</li>
-            <li onClick={()=>{navigate('/perfumes')}}>العطور</li>
-            <li onClick={()=>{navigate('/make-up')}}>المكياج</li>
+    <div className="main-menu">
+      
+        <ul className="main-menu">
+          <li onClick={()=>{navigate('/home')}}>الرئيسية</li>
+            {categories.map((category) => (
+                <li key={category.id} onClick={() => navigate(`/category/${category.id}`)}>
+                    {category.name}
+                </li>
+            ))}
         </ul>
+    </div>
 
   )
 }

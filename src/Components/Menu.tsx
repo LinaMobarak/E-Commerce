@@ -1,17 +1,19 @@
 import { CgProfile } from 'react-icons/cg';
-import '../Styles/MenuStyle.css'
+import '../style/MenuStyle.css'
 import { RiShoppingBag4Line } from "react-icons/ri";
 import { FaRegHeart } from 'react-icons/fa';
 import { IoSearch } from 'react-icons/io5';
 import NavBar from './NavBar';
+import { useNavigate } from 'react-router-dom';
 
 const Menu = () => {
 
+    const navigate = useNavigate();
   return (
     <div className="logo-menu">
             <div className="user-actions">
                 <div className="menu">سلة التسوق</div>
-                <RiShoppingBag4Line />
+                <RiShoppingBag4Line onClick={()=>{navigate('/cart')}} />
                 <CgProfile />
                 <FaRegHeart />
                 <IoSearch />

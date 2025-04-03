@@ -1,21 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Home from './Pages/Home'
+import Home from './pages/Home'
 import './App.css'
-import Care  from "./Pages/Care";
-import Children from "./Pages/Children";
-import Perfumes from "./Pages/Perfumes";
-import MakeUp from "./Pages/MakeUp";
+import Category from "./pages/Category";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
-      <Route path="/care" element={<Care />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/children" element={<Children />} />
-      <Route path="/perfumes" element={<Perfumes />} />
-      <Route path="/make-up" element={<MakeUp />} />
+      <Route path="/category/:id" element={<Category />} />
+      <Route path="/cart" element={<Cart />} />
+      
       
     </Routes>
   </BrowserRouter>

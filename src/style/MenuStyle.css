@@ -16,20 +16,19 @@
     display: flex;
     list-style: none;
     background-color: #eeeeee;
-    padding: 10px;
+    padding: 5px;
     border-radius: 30px;
     direction: rtl;
-    animation: left-in 0.5s ease-in forwards;
-    animation-delay: 0%;
-    opacity: 0;
+    width: fit-content;
+    margin: 0 auto;
   
 }
 
 .main-menu li {
-    margin: 0 10px;
+    margin: 0 5px;
     padding: 5px 15px;
     cursor: pointer;
-    transition: 1s;
+
     
 }
 
@@ -38,6 +37,8 @@
     border-radius: 20px;
     color: #000;
 }
+
+
 
 .user-actions {
     display: grid;
@@ -52,27 +53,3 @@
 
 }
 
-@keyframes fade-in
-{
-    from
-    {
-        opacity: 0;
-    }
-    to
-    {
-        opacity: 1;
-    }
-}
-@keyframes left-in
-{
-    from
-    {
-        transform: translateX(-200px);
-        opacity: 0;
-    }
-    to
-    {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-}
