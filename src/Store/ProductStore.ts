@@ -17,38 +17,40 @@ type ProductStore = {
 }
 
 const useProductStore = create<ProductStore>((set) => ({
+  
     productsArray: [
       { 
-        "category": 4,
-        "id": 1,
-        "name": "Foundation",
-        "price": 29.99,
-        "image": "/images/foundation.jpg",
+        category: 4,
+        id: 1,
+        name: "Foundation",
+        price: 29.99,
+        image: "/images/foundation.jpg",
+        quantity: 0
     
       },
       { 
-        "category": 4,
-        "id": 2,
-        "name": "Mascara",
-        "price": 19.99,
-        "image": "/images/mascara.jpg",
-        
+        category: 4,
+        id: 2,
+        name: "Mascara",
+        price: 19.99,
+        image: "/images/mascara.jpg",
+        quantity: 0
       },
       { 
-        "category": 4,
-        "id": 3,
-        "name": "Lipstick",
-        "price": 15.99,
-        "image": "/images/lipstick.jpg",
-        "description": "Rich, vibrant lipstick with a smooth finish."
+        category: 4,
+        id: 3,
+        name: "Lipstick",
+        price: 15.99,
+        image: "/images/lipstick.jpg",
+        quantity: 0
       },
       { 
-        "category": 4,
-        "id": 4,
-        "name": "Blush",
+        category: 4,
+        id: 4,
+        name: "Blush",
         "price": 18.99,
         "image": "/images/blush.jpg",
-        "description": "A soft, buildable blush that gives your cheeks a natural flush."
+        quantity: 0
       },
       { 
         "category": 4,
@@ -56,7 +58,8 @@ const useProductStore = create<ProductStore>((set) => ({
         "name": "Eyeshadow Palette",
         "price": 39.99,
         "image": "/images/eyeshadow-palette.jpg",
-        "description": "A variety of matte and shimmer shades for any look."
+        quantity: 0
+        
       },
       { 
         "category": 2,
@@ -64,7 +67,7 @@ const useProductStore = create<ProductStore>((set) => ({
         "name": "Makeup Primer",
         "price": 24.99,
         "image": "/images/makeup-primer.jpg",
-        "description": "Preps your skin for makeup and helps it last longer."
+        quantity: 0
       },
       { 
           "category": 1,
@@ -72,7 +75,7 @@ const useProductStore = create<ProductStore>((set) => ({
           "name": "Face Cleanser",
           "price": 19.99,
           "image": "/images/face-cleanser.jpg",
-          "description": "A gentle cleanser that removes dirt and makeup without drying."
+          quantity: 0
         },
         { 
           "category": 2,
@@ -80,7 +83,7 @@ const useProductStore = create<ProductStore>((set) => ({
           "name": "Moisturizer",
           "price": 24.99,
           "image": "/images/moisturizer.jpg",
-          "description": "Hydrating moisturizer for smooth and soft skin."
+          quantity: 0
         },
         { 
           "category": 1,
@@ -88,7 +91,7 @@ const useProductStore = create<ProductStore>((set) => ({
           "name": "Sunscreen",
           "price": 14.99,
           "image": "/images/sunscreen.jpg",
-          "description": "SPF 50 sunscreen that protects against harmful UV rays."
+          quantity: 0
         },
         { 
           "category": 3,
@@ -96,7 +99,7 @@ const useProductStore = create<ProductStore>((set) => ({
           "name": "Exfoliating Scrub",
           "price": 18.99,
           "image": "/images/exfoliating-scrub.jpg",
-          "description": "A scrub to remove dead skin cells and reveal smoother skin."
+          quantity: 0
         },
         { 
           "category": 3,
@@ -104,7 +107,7 @@ const useProductStore = create<ProductStore>((set) => ({
           "name": "Eye Cream",
           "price": 22.99,
           "image": "/images/eye-cream.jpg",
-          "description": "An eye cream that helps reduce puffiness and dark circles."
+          quantity: 0
         },
         { 
           "category": 3,
@@ -112,16 +115,15 @@ const useProductStore = create<ProductStore>((set) => ({
           "name": "Night Cream",
           "price": 29.99,
           "image": "/images/night-cream.jpg",
-          "description": "A rich night cream that works while you sleep for rejuvenated skin."
+          quantity: 0
         }
-       
     ],
     
     cart: [],
     favourites: [],
 
     addToCart: (product: ProductInfo) => set((state) => {
-        const exists = state.cart.find((exist) => exist.id === product.id)
+        const exists = state.cart.find((p) => p.id === product.id)
         
         if (exists) {
             exists.quantity += 1;
