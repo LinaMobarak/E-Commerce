@@ -1,10 +1,19 @@
 
-import {ProductInfo} from '../Store/ProductStore'
+import { useEffect, useState } from 'react'
+import useProductStore, {ProductInfo} from '../Store/ProductStore'
 import '../style/Products.css'
 import { MdAddShoppingCart } from 'react-icons/md'
 
-function Products(props : ProductInfo) {
 
+function Products(props : ProductInfo) {
+    const [isShown, setIsShown] = useState(false)
+
+    useEffect(() => {
+        if (window.location.pathname.includes('cart')) {
+            setIsShown(!isShown)
+        }
+    }, [])
+    
     return (
 
                     <div  className="product-card">
@@ -15,14 +24,14 @@ function Products(props : ProductInfo) {
                         </div>
                         
                         <p>ريال سعودي {props.price}</p>
-                        {/* <p>الكمية {props.quantity}</p> */}
+                        {isShown && <p>الكمية {props.quantity}</p>}
                         <button>
                                 <MdAddShoppingCart />
                         </button>
                     </div>
         
 
-    );
+    )
 }
 
-export default Products;
+export default Products
